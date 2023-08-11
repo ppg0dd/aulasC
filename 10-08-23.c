@@ -1,4 +1,87 @@
-/*Faça um algoritmo em C que leia:
+/* Exemplo 1:
+
+Faça um algoritmo em C que leia de um aluno (1) da academia:
+
+⟼  Medida da Cintura (em centímetros): MC
+
+⟼  Medida da Quadril (em centímetros): MQ
+
+E exiba na tela seu  RCQ  (Relação Cintura-Quadril em %). Sendo que:
+
+RCQ=MCMQ∗100 */
+
+#include <stdio.h>
+
+int main()
+{
+    float MC, MQ, RCQ;
+    printf("Digite a medida da Cintura: \n");
+    scanf("%f", &MC);
+    printf("Digite a medida do Quadril: \n");
+    scanf("%f", &MQ);
+    
+    RCQ = (MC/MQ)*100;
+    
+    printf("A relação Cintura-Quadril é de %.0f", RCQ);
+}
+
+
+
+
+/* Exemplo 2:
+
+Escrever um algoritmo em C que leia de um (1) aluno sua nota do 1º e 2º bimestre e exiba na tela sua média semestral. */
+
+#include <stdio.h>
+
+int main()
+{
+    float notab1, notab2, media;
+    
+    printf("Digite a sua nota do primeiro bimestre: \n");
+    scanf("%f", &notab1);
+    printf("Digite a sua nota do segundo bimestre: \n");
+    scanf("%f", &notab2);
+    
+    media = (notab1 + notab2)/2;
+    
+    printf("\nA sua média semestral foi %.1f", media);
+}
+
+
+
+
+
+
+/* Exemplo 4:
+
+Escrever um algoritmo em C que leia a comprimento de uma (1) barra em centímetro e exiba na tela sua dimensão em:
+
+Polegadas
+pés
+Sabendo que, 1 Polegada = 2.54 Centímetros = 0.08 pés (ft).
+*/
+#include <stdio.h>
+
+int main()
+{
+    float comprimento, polegada, pes;
+    
+    printf("Digite o comprimento de uma barra em centímetros: \n");
+    scanf("%f", &comprimento);
+    polegada = comprimento/2.54;
+    pes = polegada*0.08;
+    
+    printf("\nO comprimento da barra de centímetros (%.2f) em polegadas: %.2f; em pés: %.2f", comprimento, polegada, pes);
+}
+
+
+
+
+
+/* Exemplo 5:
+
+Faça um algoritmo em C que leia:
 
 ⟼  Medidas de um Tanque de combustível - LAP (em metros):
 
