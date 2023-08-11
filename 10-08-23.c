@@ -28,6 +28,8 @@ int main()
 
 
 
+
+
 /* Exemplo 2:
 
 Escrever um algoritmo em C que leia de um (1) aluno sua nota do 1º e 2º bimestre e exiba na tela sua média semestral. */
@@ -48,6 +50,38 @@ int main()
     printf("\nA sua média semestral foi %.1f", media);
 }
 
+
+
+
+/* Exemplo 3:
+
+Escrever um algoritmo em C que leia de uma (1) mercadoria:
+
+Preço: R$
+Quantidade: Unidade
+Reajuste (Desconto): %
+exibir na tela:
+
+Total a pagar: sem desconto
+Total a pagar: com desconto*/
+
+#include <stdio.h>
+
+int main()
+{
+    float preco, desconto;
+    int quantidade;
+    printf("Digite o preço do produto: ");
+    scanf("%f", &preco);
+    printf("\nDigite a quantidade do produto: ");
+    scanf("%d", &quantidade);
+    printf("\nDigite o desconto do produto (em %%): ");
+    scanf("%f", &desconto);
+    float total, totalDesconto;
+    total = preco * quantidade;
+    totalDesconto = total * (1 - desconto/100);
+    printf("O valor total da compra foi R$ %.2f, o valor total com desconto foi R$ %.2f", total, totalDesconto);
+}
 
 
 
