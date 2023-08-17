@@ -185,3 +185,21 @@ int main(void)
     IMC = M / (H*H);
     printf("Seu IMC é %.2f", IMC);
 }
+
+
+/*f) Volume em litros de uma esfera*/
+
+#include <stdio.h>
+#include <math.h>
+#define pi 3.14
+
+int main(void)
+{
+    float R, V;
+    printf("Digite o raio da esfera (em metros): ");
+    scanf("%f", &R);
+    V = ((3*pi*pow(R, 3))/4)*1000;
+    printf("O volume da esfera: %.2f L", V);
+
+    return 0;
+}
