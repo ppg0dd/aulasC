@@ -34,7 +34,7 @@ int main(void)
         printf("Obesidade grau I");
     } else if(IMC < 40.0) {
         printf("Obesidade grau II");
-    } else{
+    } else {
         printf("Obesidade grau III");
     }
     
