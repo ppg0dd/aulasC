@@ -5,24 +5,37 @@
 int main(void)
 {
     float H, M, IMC;
-    printf("Digite o seu peso (em kg):\n");
+    printf("Digite o peso (kg): ");
     scanf("%f", &M);
-    printf("Digite a sua altura (em metros, trocando a vírgula pelo .):\n");
+    if(M <= 0) {
+        printf("Peso inválido");
+        return 0;
+    }
+    printf("Digite a altura (m): ");
     scanf("%f", &H);
+    if(H <= 0) {
+        printf("Altura inválida");
+        return 0;
+    }
     IMC = M / (H*H);
-    printf("Seu IMC é %.2f\n\n", IMC);
-    if (IMC < 18.5) {
-        printf("Você está em estado de magreza, por favor procure um médico.");
-    } else if(IMC < 24.9) {
-        printf("Você está com um IMC normal, parabéns!");
-    } else if(IMC < 29.9) {
-        printf("Você está com sobrepeso, busque se exercitar e melhorar a alimentação.");
-    } else if(IMC < 34.9) {
-        printf("Você está com obesidade grau I, busque cuidar da sua saúde para que esse quadro não agrave.");
-    } else if(IMC < 39.9) {
-        printf("Você está com obesidade grau II, procure um médico para realizar um acompanhamento para melhorar a saúde");
-    } else {
-        printf("Você está com obesidade grau III, por favor procure um médico.");
+    printf("IMC: %.2f\n", IMC);
+    
+    if (IMC < 16) {
+        printf("Magreza grau III");
+    } else if(IMC < 17.0) {
+        printf("Magreza grau II");
+    } else if(IMC < 18.5) {
+        printf("Magreza grau I");
+    } else if(IMC < 25.0) {
+        printf("Peso adequado");
+    } else if(IMC < 30.0) {
+        printf("Pré-obeso");
+    } else if(IMC < 35.0) {
+        printf("Obesidade grau I");
+    } else if(IMC < 40.0) {
+        printf("Obesidade grau II");
+    } else{
+        printf("Obesidade grau III");
     }
     
     return 0;
