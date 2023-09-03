@@ -299,3 +299,136 @@ int main(void)
     
     return 0;
 }
+
+/*14- Escrever um algoritmo em C que leia o voto de 50 eleitores de um condomínio nos candidatos (1 ou 2 ou
+0 (Nulo ou Inválido)) para síndico e exiba na tela, em porcentagem, o resultado da eleição por
+candidato e os votos nulos ou inválidos. Crie um Menu de Opções para o eleitor.*/
+
+#include <stdio.h>
+
+int main(void)
+{
+    int voto, voto1, voto2, votoNulo;
+    
+    for (int i = 0; i < 50; i++) {
+        printf("\nDigite o seu voto:\n(1) Candidato 1.\n(2) Candidato 2.\n(0) Nulo ou inválido.\n");
+        scanf("%d", &voto);
+        if (voto == 1) {
+            voto1++;
+        } else if (voto == 2) {
+            voto2++;
+        } else{
+            votoNulo++;
+        }
+    }
+    float totalVotos = voto1+voto2+votoNulo;
+    printf("\n\tResultado:\nCandidato 1: %.0f%%\nCandidato 2: %.0f%%\nNulo ou inválido: %.0f%%", voto1*100/totalVotos, voto2*100/totalVotos, votoNulo*100/totalVotos);
+
+    return 0;
+}
+
+/*15- Escrever um algoritmo que leia vários números reais (um por um) e exiba, em porcentagem, a
+quantidade de positivos e de negativos lidos. Pare o programa quando o usuário digitar ZERO.*/
+
+#include <stdio.h>
+
+int main(void)
+{
+    int x = 1, positivos, negativos;
+    while (x != 0) {
+        printf("Digite um número: ");
+        scanf("%d", &x);
+        if (x > 0) {
+            positivos++;
+        } else if (x < 0) {
+            negativos++;
+        }
+    }
+    float total = (positivos + negativos)*0.01;
+    printf("\nPositivos: %.0f%%\nNegativos: %.0f%%", positivos/total, negativos/total);
+    return 0;
+}
+
+/*16- Escreva um algoritmo que leia 300 números positivos e exiba o menor e o maior: par e ímpar.*/
+
+#include <stdio.h>
+
+int main(void)
+{
+    int x, maiorPar, maiorImpar, menorPar, menorImpar;
+
+    
+    for(int i = 0; i < 300; i++) {
+        printf("Digite um número: ");
+        scanf("%d", &x);
+        
+        if (x <= 0) {
+            printf("\tPor favor, digite apenas números positivos.\n");
+            return 0;
+        }
+        
+        if (x % 2 == 0) {
+              if (x > maiorPar) {
+                maiorPar = x;
+            } if(x < menorPar || menorPar == 0) {
+                menorPar = x;
+            }
+        }
+        
+        else {
+            if (x > maiorImpar) {
+                maiorImpar = x;
+            } if(x < menorImpar || menorImpar == 0) {
+                menorImpar = x;
+            }
+        }
+    }
+    printf("\n\tPar\nMaior número: %d\nMenor número: %d\n\tÍmpar\nMaior número: %d\nMenor número: %d", maiorPar, menorPar, maiorImpar, menorImpar);
+    return 0;
+}
+
+/*17- Escreva um algoritmo que leia vários números reais positivos e exiba o menor deles.
+Pare a leitura quando for digitado o número zero.*/
+
+#include <stdio.h>
+
+int main(void)
+{
+    float x, menorX;
+    do {
+        printf("Digite um número: ");
+        scanf("%f", &x);
+        if ((x < menorX || menorX == 0 )&& x > 0) {
+            menorX = x;
+        }
+        
+    } while (x != 0);
+    
+    printf("\nO menor número real positivo digitado foi: %f", menorX);
+    
+    return 0;
+}
+
+/*18- Escreva um algoritmo que leia 100 números ímpares e múltiplos de 7. Exiba a média dos números lidos.*/
+
+#include <stdio.h>
+
+int main(void)
+{
+    int x, soma;
+    float total;
+    
+    while(total < 5) {
+        printf("Digite um número ímpar e múltiplo de 7: ");
+        scanf("%d", &x);
+        if (x % 2 == 1 && x % 7 == 0) {
+            soma += x;
+            total++;
+        } else {
+            printf("\nDigite um número válido!\n");
+        }
+    }
+    printf("A média dos valores digitados foi: %.1f", soma/total);
+    
+    return 0;
+}
