@@ -481,3 +481,28 @@ int main(void)
 	
 	return 0;
 }
+
+/*21- Escreva um algoritmo que leia vários números e exiba a média dos números lidos que estão no intervalo
+fechado: [10 * p3, 100 * p]. Pare o algoritmo quando for digitado um número fora do intervalo.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    int x, qntd;
+    double total;
+    
+    do {
+    	printf("\nNumero: ");
+    	scanf("%d", &x);
+    	if (x >= 10*3.14 && x <= 100*4.14) {
+    		total += x;
+    		qntd++;
+		}
+	} while (x >= 10*3.14 && x <= 100*4.14);
+	printf("\n\tMedia: %.2f\n", total/qntd);
+	
+	system("pause");
+	return 0;
+}
