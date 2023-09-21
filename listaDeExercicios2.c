@@ -432,3 +432,52 @@ int main(void)
     
     return 0;
 }
+
+//19- Escreva um algoritmo que exiba todos os múltiplos de 7 ou 13 que estão no intervalo entre 1000 e 1500.
+
+#include <stdio.h>
+
+int main(void)
+{
+    for(int i = 1; i*7 <= 1500; i++) {
+        if (7*i > 1000 && i*7 < 1500) {
+            printf("%d ", i*7);
+        } else if (i*13 > 1000 && i*13 < 1500) {
+            printf("%d ", i*13);
+        }
+    }
+	
+	return 0;
+}
+
+/*20- Escreva um algoritmo que leia o salário em reais de vários clientes de um shopping e exiba em
+porcentagem a divisão dos clientes por tipo de cartão, conforme a seguir:
+✓ Cartão VIP: Maior ou igual a R$ 5.000
+✓ Cartão STANDARD: Menor que R$ 5.000
+Faça um Menu de opções para o usuário: 1: Cadastrar Cliente ou 0: Sair do Programa.*/
+
+#include <stdio.h>
+
+int main(void)
+{
+    int opcao = 1, qntdVIP, qntdSTAND;
+    double salario;
+    while(opcao != 0) {
+        printf("\n\tMenu\n1: Cadastrar Cliente.\n0: Sair do Programa.\n");
+        scanf("%d", &opcao);
+        
+        if (opcao == 1) {
+            printf("\nDigite o salário do cliente: ");
+            scanf("%lf", &salario);
+            if (salario >= 5000) {
+                qntdVIP++;
+            } else {
+                qntdSTAND++;
+            }
+        }
+    }
+    double total = qntdSTAND+ qntdVIP;
+    printf("\nVIP: %.0f%%\nSTANDARD: %.0f%%", qntdVIP*100/total, qntdSTAND*100/total);
+	
+	return 0;
+}
