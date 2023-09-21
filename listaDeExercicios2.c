@@ -452,15 +452,15 @@ int main(void)
 
 /*20- Escreva um algoritmo que leia o salário em reais de vários clientes de um shopping e exiba em
 porcentagem a divisão dos clientes por tipo de cartão, conforme a seguir:
-✓ Cartão VIP: Maior ou igual a R$ 5.000
-✓ Cartão STANDARD: Menor que R$ 5.000
+? Cartão VIP: Maior ou igual a R$ 5.000
+? Cartão STANDARD: Menor que R$ 5.000
 Faça um Menu de opções para o usuário: 1: Cadastrar Cliente ou 0: Sair do Programa.*/
 
 #include <stdio.h>
 
 int main(void)
 {
-    int opcao = 1, qntdVIP, qntdSTAND;
+    int opcao = 1, qntdVIP = 0, qntdSTAND = 0;
     double salario;
     while(opcao != 0) {
         printf("\n\tMenu\n1: Cadastrar Cliente.\n0: Sair do Programa.\n");
