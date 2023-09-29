@@ -199,3 +199,41 @@ double IMC(float massa, float altura) {
     double resultado = massa / (altura*altura);
     return resultado;
 }
+
+/*Exemplo 4: Função Número Perfeito:*/
+
+#include <stdio.h>
+#include <math.h>
+
+void verificadorNumPerfeito(int a);
+
+int main (void)
+{
+    int x;
+    printf("Digite um número: ");
+    scanf("%d", &x);
+    verificadorNumPerfeito(x);
+    
+    return 0;
+}
+
+void verificadorNumPerfeito(int a) {
+    int y = 1;
+    
+    
+        printf("\nDivisores naturais: 1 ");
+        for (int i = 2; i < a; i++) {
+            if( a % i == 0) {
+                printf("+ %d ", i);
+                y += i;
+            }
+        }
+    
+    printf("= %d", y);
+    if(y == a) {
+        printf("\nnúmero perfeito");
+    } else {
+        printf("\nnúmero não perfeito");
+    }
+    
+}
