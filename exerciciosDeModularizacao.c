@@ -237,3 +237,38 @@ void verificadorNumPerfeito(int a) {
     }
     
 }
+
+/*Exemplo 4.2: Função Número Perfeito:*/
+
+#include <stdio.h>
+#include <math.h>
+
+void verificadorNumPerfeito(int a);
+
+int main (void)
+{
+    int x;
+    for (int i = 2; i < 10000; i++) {
+        verificadorNumPerfeito(i);
+    }
+    
+    return 0;
+}
+
+void verificadorNumPerfeito(int a) {
+    int y = 1;
+    
+    
+        for (int i = 2; i < a; i++) {
+            if( a % i == 0) {
+                
+                y += i;
+            }
+        }
+    
+    
+    if(y == a) {
+        printf("\nnúmero perfeito: %d", y);
+    }
+    
+}
