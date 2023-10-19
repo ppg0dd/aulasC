@@ -649,3 +649,38 @@ double diabeteNao (double massa, int idade) {
     
     return taxa;
 }
+
+/*26- Escreva um algoritmo que leia o salário bruto de 10.000 entrevistados e exiba na tela a média salarial
+entre as pessoas com escolaridade de ensino: Fundamental, Médio e Superior.*/
+#include <stdio.h>
+
+int main(void)
+{
+    int qntdF, qntdM, qntdS, escolaridade;
+    double salarioF, salarioM, salarioS, salario;
+    
+    for (int i = 1; i <=5; i++) {
+        printf("\n\tQual a escolaridade do entrevistado?\n1: Fundamental\n2: Médio\n3: Superior\n");
+        scanf("%d", &escolaridade);
+        printf("\nQual o salário do entrevistado? ");
+        scanf("%lf", &salario);
+        
+        if (escolaridade == 1) {
+            qntdF++;
+            salarioF += salario;
+        } else if (escolaridade == 2) {
+            qntdM++;
+            salarioM += salario;
+        } else if (escolaridade == 3) {
+            qntdS++;
+            salarioS += salario;
+        } else {
+            printf("\nInválido.");
+            i--;
+        }
+    }
+    
+    printf("\n\tMédia dos salários. (por escolaridade)\nFundamental: %.2f\nMédio: %.2f\nSuperior: %.2f", salarioF/qntdF, salarioM/qntdM, salarioS/qntdS);
+
+    return 0;
+}
