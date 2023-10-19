@@ -486,12 +486,12 @@ int main(void)
 fechado: [10 * p3, 100 * p]. Pare o algoritmo quando for digitado um número fora do intervalo.*/
 
 #include <stdio.h>
-#include <stdlib.h>
+
 
 int main(void)
 {
     int x, qntd;
-    double total;
+    double total = 0;
     
     do {
     	printf("\nNumero: ");
@@ -500,9 +500,93 @@ int main(void)
     		total += x;
     		qntd++;
 		}
-	} while (x >= 10*3.14 && x <= 100*4.14);
+	} while ((x >= 10*3.14 && x <= 100*4.14) || total == 0);
 	printf("\n\tMedia: %.2f\n", total/qntd);
 	
-	system("pause");
+	
 	return 0;
+}
+
+/*22- Escreva um algoritmo que leia a temperatura diária de inverno de uma estação de esqui. Sabe-se que as
+temperaturas no inverno variam de -15° a 5° C. Exiba a temperatura média da estação parando o
+algoritmo quando for digitada uma temperatura fora da estação de inverno.*/
+
+#include <stdio.h>
+
+
+int main(void)
+{
+    int temp, qntd;
+    double total;
+	
+	do {
+	    printf("Digite a temperatura do dia: ");
+	    scanf("%d", &temp);
+	    
+	    if (temp >= -15 && temp <= 5) {
+	        total += temp;
+	        qntd++;
+	    }
+	} while (temp >= -15 && temp <= 5 || total == 0);
+	
+	printf("\nA média da temperatura da estação de inverno foi: %.2f", total/qntd);
+	
+	return 0;
+}
+
+/*23- Escreva um algoritmo que leia a inscrição e a tempo de prova (minutos) de 20000 maratonistas.
+Exiba na tela a inscrição e o tempo de prova do maratonista vencedor.*/
+
+#include <stdio.h>
+
+
+int main(void)
+{
+    int incricao, vencedor;
+    double tempo = 0, maiorTempo;
+    for (int i = 0; i < 200000; i++) {
+        printf("\nDigite sua inscrição e seu tempo de prova: ");
+        scanf("%d", &incricao);
+        scanf("%lf", &tempo);
+        
+        if (tempo > maiorTempo) {
+            vencedor = incricao;
+            maiorTempo = tempo;
+        }
+    } 
+	
+	printf("\n\tVencedor\nInscrição: %d\nTempo: %.2f", vencedor, maiorTempo);
+	
+	return 0;
+}
+
+/*24- Escreva um algoritmo que leia o preço em reais de 50 mercadorias e exiba-as com 5% de reajuste.
+Entretanto, se o reajuste exceder o teto de R$ 25.50 reais, retirar 2% do preço reajustado.*/
+
+#include <stdio.h>
+
+double reajuste (double total);
+
+int main(void)
+{
+    double mercadorias, total;
+    for(int i = 1; i <= 5; i++) {
+        printf("\nDigite o valor da %i mercadoria: ", i);
+        scanf("%lf", &mercadorias);
+        total += mercadorias;
+    }
+    double totalReajustado = reajuste(total);
+    printf("\n\tResultado\nValor bruto: %.2f\nValor com reajuste: %.2f", total, totalReajustado);
+	
+	return 0;
+}
+
+double reajuste (double total) {
+    double resultado;
+    if (total *0.05 > 25.5) {
+        resultado = (total*1.05 - (total*1.05)*0.02);
+    } else {
+        resultado = total*1.05;
+    }
+    return resultado;
 }
