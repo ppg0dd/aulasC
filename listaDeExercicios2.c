@@ -570,7 +570,7 @@ double reajuste (double total);
 int main(void)
 {
     double mercadorias, total;
-    for(int i = 1; i <= 5; i++) {
+    for(int i = 1; i <= 50; i++) {
         printf("\nDigite o valor da %i mercadoria: ", i);
         scanf("%lf", &mercadorias);
         total += mercadorias;
@@ -589,4 +589,63 @@ double reajuste (double total) {
         resultado = total*1.05;
     }
     return resultado;
+}
+
+/*25- Escreva um algoritmo que calcule a taxa média de glicose de cada um dos 500 pacientes em função de
+sua idade, massa e se é diabético ou não, conforme a tabela:
+Diabetes Fórmula
+Não Taxa = (
+√0.98 ∗ Massa 2
+1.08 ∗ Idade )
+Sim Taxa = (
+√Massa 2
+0.93 ∗ Idade)
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+double diabeteSim (double massa, int idade);
+double diabeteNao (double massa, int idade);
+
+int main (void) {
+    int a, idade;
+    double massa, resultadoTaxa;
+    
+    for (int i = 1; i <= 500; i++) {
+        printf("\nPassiente diabético?\n1: SIM\n2: NAO\n");
+        scanf("%d", &a);
+        
+        if (a == 1) {
+            printf("\nDigite sua massa: ");
+            scanf("%lf", &massa);
+            printf("\nDigite sua idade: ");
+            scanf("%d", &idade);
+            resultadoTaxa = diabeteSim(massa, idade);
+            printf("\nA taxa do paciente %d é igual a: %.2f", i, resultadoTaxa);
+        } else if (a ==2) {
+            printf("\nDigite sua massa: ");
+            scanf("%lf", &massa);
+            printf("\nDigite sua idade: ");
+            scanf("%d", &idade);
+            resultadoTaxa = diabeteNao(massa, idade);
+            printf("\nA taxa do paciente %d é igual a: %.2f\n", i, resultadoTaxa);
+        }
+    }
+    
+    
+    return 0;
+}
+
+double diabeteSim (double massa, int idade) {
+    double taxa;
+    taxa = (sqrt(massa)) / (0.93*idade);
+    return taxa;
+}
+
+double diabeteNao (double massa, int idade) {
+    double taxa;
+    taxa = (sqrt(0.98 * massa)) / (1.08*idade);
+    
+    return taxa;
 }
