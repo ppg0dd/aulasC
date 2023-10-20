@@ -684,3 +684,84 @@ int main(void)
 
     return 0;
 }
+
+/*27- Escreva um algoritmo que leia vários números (? R) e exiba a média dos positivos lidos e a média dos
+negativos lidos, parando o programa quando for digitado o número zero.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main (void) {
+	setlocale(LC_ALL, "portuguese");
+	
+	
+	int x, qntdP, qntdN;
+	double positivos, negativos;
+	
+	do {
+		printf("\nDigite um valor (positivo ou negativo): ");
+		scanf("%d", &x);
+		
+		if (x != 0) {
+			if (x > 0) {
+				qntdP++;
+				positivos += x;
+			} else {
+				qntdN++;
+				negativos += x;
+			}
+		}
+		
+	} while (x != 0);
+	
+	printf("\n\tResultados\nMédia dos positivos: %.2f\nMédia dos negativos: %.2f\n", positivos/qntdP, negativos/qntdN);
+	
+	
+	
+	system("pause");
+	return 0;
+}
+
+/*28- Faça um algoritmo que leia um valor inteiro positivo para a variável: ? (? = 1) e calcule e exiba na tela
+o resultado. formulas na lista*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+#define PI 3.14
+
+int main (void) {
+	setlocale(LC_ALL, "portuguese");
+	
+	double somatorio = PI, multiplicacao;
+	
+	int n;
+	do {
+		printf("\nDigite um valor n qualquer: \n");
+		scanf("%d", &n);
+		if (n < 1) {
+			printf("\nValor inválido (n precisa ser maior ou igual a 1)\n");
+		}
+	} while (n < 1);
+	
+	int i, j;
+	for (i = 2, j = 1; j < n; i += 2, j++) {
+		somatorio += PI/i;
+	}
+	
+	printf("\nSomatório: %.3f\n", somatorio);
+	
+	int a, b;
+	for (a = 0, b = 1; a < n; b += 2, a++) {
+		multiplicacao += b/PI;
+	}
+	
+	printf("Multiplicatório: %.3f\n", multiplicacao);
+	
+	
+	
+	system("pause");
+	return 0;
+}
