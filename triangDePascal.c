@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-//O único problema desse código é que no começo do triângulo ele imprime  1 1, sendo que era para imprimir apenas 1;
-
 int fatorial (int x);
 int combinacao (int n, int p);
 
@@ -12,7 +10,7 @@ int main (void) {
 	scanf("%d", &linhas);
 	int i, j;
 	for(i = 0; i <= linhas; i++) {
-		for(j = 0; j <= linhas; j++) {
+		for(j = 0; j <= i; j++) {
 			if (combinacao(i, j) != 0) {
 				printf("%d ", combinacao(i, j));
 			}
