@@ -5,8 +5,7 @@
 int main()
 {
     //comando para gerar um número novo toda vez que rodar
-    int segundos = time(0);
-    srand(segundos);
+    srand(time(NULL));
     
     
     int a = rand(); //número aleatório que ocupa todos os espaços do int
