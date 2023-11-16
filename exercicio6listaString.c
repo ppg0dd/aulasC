@@ -16,7 +16,7 @@ int main (void) {
     leituraSilaba (silaba);
     verificador (palavra, silaba);
 
-    //system("pause");
+    system("pause");
     return 0;
 }
 
