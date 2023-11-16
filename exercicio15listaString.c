@@ -28,7 +28,7 @@ void leitura (char *a) {
 
 void funcaoTextoAbreviar (char *b, char *c, char *d) {
     int i, j;
-    for (i = 0; i < 5; i ++) {
+    for (i = 0; i < 100; i ++) {
         leitura(b);
         for (j = 0; j < 3; j++) {
             c[j] = b[j];
