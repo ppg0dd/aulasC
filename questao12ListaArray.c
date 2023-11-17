@@ -1,6 +1,6 @@
 /*Escrever para cada item abaixo um programa em C que preencha um array [SIZE = 10] com valores reais
 aleatórios (rand/srand) no intervalo entre [10, 99] com uma (1) casa decimal de precisão. Após isso, faça:
-*/
+12. Exibir na tela a soma dos termos menores que a média dos termos.*/
 
 #include <stdio.h>
 #include <stdlib.h>
