@@ -36,8 +36,8 @@ void verificador (char *c, char *d) {
         x = 0;
         contador = 0;
         leitura (c);
-        
-        for (int n = 0; c[n + 1] != '\0'; n++) {
+        int n;
+        for (n = 0; c[n + 1] != '\0'; n++) {
             if (c[n] == d[0] && c[n+1] == d[1]) {
                 x = 1;
                 contador++;
