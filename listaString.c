@@ -111,3 +111,42 @@ int main() {
 
     return 0;
 }
+
+/*7) Escrever um programa que leia uma string e identifique se esta é um palíndromo. Palíndromo é uma
+palavra lida da esquerda para direita ou vice-versa permanecendo a mesma palavra. Ex: ANILINA*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+void ler (char *p);
+void verificar (char *p);
+
+int main (void) {
+    char palin [21];
+    ler (palin);
+    verificar (palin);
+    
+    
+    //system("pause");
+    return 0;
+}
+
+void ler (char *p) {
+    printf("Digite uma palavra: ");
+    scanf(" %20[^\n]", p);
+}
+
+void verificar (char *p) {
+    char x [21];
+    int i;
+    for(i = 0; i < strlen(p); i++) {
+        x [i] = p [strlen(p)-1-i];
+    }
+    if (strcmp(x, p) == 0) {
+        printf("\nA palavra digitada é um políndromo\n");
+    } else {
+        printf("\nA palavra digitada NÂO é um políndromo\n");
+    }
+}
